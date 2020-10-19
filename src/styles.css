@@ -19,7 +19,6 @@ body {
   background-image: url('./images/bg-pattern.png');
 }
 
-
 .input-contry-area{
   width: 300px;
   height:40px;
@@ -30,8 +29,6 @@ body {
   font-size: 18px;
 }
 
-
-
 .contry-list-item{
   font-size: 36px;
   font-weight: 500;
@@ -39,7 +36,6 @@ body {
 
 .info-conteiner{
   display:flex;
-
 }
 
 .info-list{

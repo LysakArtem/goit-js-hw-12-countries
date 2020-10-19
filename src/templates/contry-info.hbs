@@ -1,17 +1,17 @@
 {{#each this}}
-<h1>{{name}}</h1>
-<div class="info-conteiner">
-<ul class="info-list">
-    <li class="info-item"><span class="info-field">Capital:</span>   {{capital}}</li>
-    <li class="info-item"><span class="info-field">Population:</span> {{population}}</li>
-    <li class="info-item"><span class="info-field">Languages:</span> 
-        <ul class="info-sub-menu">
-            {{#each languages}}
-            <li>{{this.name}}</li>
-            {{/each}}
-        </ul>
-    </li>
-</ul>
-<img src="{{flag}}" alt="flag" class="flag">
-</div>
+    <h1>{{name}}</h1>
+    <div class = "info-conteiner">
+    <ul class = "info-list">
+        <li class = "info-item"><span class="info-field">Capital:</span>{{capital}}</li>
+        <li class = "info-item"><span class="info-field">Population:</span>{{population}}</li>
+        <li class = "info-item"><span class="info-field">Languages:</span> 
+            <ul class  ="info-sub-menu">
+                {{#each languages}}
+                    <li>{{this.name}}</li>
+                {{/each}}
+            </ul>
+        </li>
+    </ul>
+    <img src = "{{flag}}" alt = "flag" class = "flag">
+    </div>
 {{/each}}

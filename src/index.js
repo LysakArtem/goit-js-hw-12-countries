@@ -6,13 +6,10 @@ import '@pnotify/core/dist/Material.css';
 import 'material-design-icons/iconfont/material-icons.css';
 import { defaults } from '@pnotify/core';
 import { error } from '@pnotify/core';
-const debounce = require('lodash.debounce');
+import { debounce } from 'lodash';
 
- defaults.styling = 'material';
- defaults.icons = 'material';
-
-
-
+defaults.styling = 'material';
+defaults.icons = 'material';
 
 const inputRef = document.querySelector('.input-contry-area');
 const contryListRef = document.querySelector('.contry');
@@ -21,7 +18,7 @@ const debounceInputCallback = debounce(event => {
     const value = event.target.value;
     contryListRef.innerHTML = '';
         if(value){
-            let url =`https://restcountries.eu/rest/v2/name/${value}`
+            let url = `https://restcountries.eu/rest/v2/name/${value}`
             const fet = fetch(url).then(res => res.json()).
             then(data => {
                 let markup = null;
@@ -32,16 +29,16 @@ const debounceInputCallback = debounce(event => {
                     markup = contryListTempl(data);
                 }
                 else if(data.length > 10){
-                    markup= '';
+                    markup = '';
                     error({
                         text: "Найдено более 10 резудльтатов. Уточните запрос!",
                         addModalClass: 'notify',
                         width: '360px',
                         delay: 3000
-                        });
+                    });
                 }
                 else{
-                    markup= '<h1>Ничего не найдено!!! попробуйте изменить запрос поиска!</h1>'
+                    markup = '<h1>Ничего не найдено!!! попробуйте изменить запрос поиска!</h1>'
                 }
                     contryListRef.insertAdjacentHTML('beforeend', markup);  
             });
